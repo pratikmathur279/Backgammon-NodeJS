@@ -3,7 +3,7 @@ console.log("Server is active");
 var express = require('express');
 
 var app = express();
-var server = app.listen(3000);
+var server = app.listen(8080);
 
 app.use(express.static('public'));
 
@@ -15,12 +15,11 @@ var matches = {};
 io.sockets.on('connection',
   // We are given a websocket object in our function
   function (socket) {
-  
+    // console.log(socket);
     console.log("We have a new client: " + socket.id);
     newPlayer(socket.id);
 	console.log("Available Player: " + availablePlayer);
 	console.log(matches);
-
 
     socket.on('table',
       function(data) {

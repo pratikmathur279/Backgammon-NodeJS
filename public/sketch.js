@@ -41,7 +41,7 @@ function windowResized() {
 }
 
 function setup() {
-  socket = io.connect('http://etustalk.club:3000');
+  socket = io.connect();
   //createCanvas(1440, 720);
   createCanvas(windowWidth, windowHeight);
   TRIANGLE_LENGTH = map(220, 0, 720, 0, height);
